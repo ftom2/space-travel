@@ -30,3 +30,7 @@ body {
 .mobile-nav {
   backdrop-filter: blur(81.5485px);
 }
+
+.uppercase {
+  text-transform: uppercase;
+}

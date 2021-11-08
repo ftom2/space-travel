@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   useEffect(() => {
@@ -8,6 +9,8 @@ export default function Home() {
       "url('images/background-home-mobile.jpg')"
     );
   });
+
+  const navigate = useNavigate();
 
   return (
     <div className="text-primary text-center mt-12 px-6 flex flex-col items-center pb-12">
@@ -21,7 +24,10 @@ export default function Home() {
         experience!
       </p>
 
-      <div className="mt-20 rounded-full bg-white h-150px w-150px flex items-center justify-center text-dark text-xl cursor-pointer">
+      <div
+        className="mt-20 rounded-full bg-white h-150px w-150px flex items-center justify-center text-dark text-xl cursor-pointer"
+        onClick={() => navigate("/destinations")}
+      >
         <span>EXPLORE</span>
       </div>
     </div>

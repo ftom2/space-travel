@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function MainNav(props) {
   return (
     <nav
@@ -12,21 +14,29 @@ export default function MainNav(props) {
         onClick={props.onClick}
       />
       <ul className="uppercase text-white space-y-8 font-barlow-cond tracking-wider mt-16">
-        <li className="flex">
-          <span className="font-bold ">00</span>
-          <span className="ml-3">Home</span>
+        <li>
+          <Link to="/" className="flex" onClick={props.onClick}>
+            <span className="font-bold ">00</span>
+            <span className="ml-3">Home</span>
+          </Link>
         </li>
         <li className="flex">
-          <span className="font-bold">01</span>
-          <span className="ml-3">Destination</span>
+          <Link to="/destinations" className="flex" onClick={props.onClick}>
+            <span className="font-bold">01</span>
+            <span className="ml-3">Destination</span>
+          </Link>
         </li>
         <li className="flex">
-          <span className="font-bold">02</span>
-          <span className="ml-3">Crew</span>
+          <Link to="/crew" className="flex" onClick={props.onClick}>
+            <span className="font-bold">02</span>
+            <span className="ml-3">Crew</span>
+          </Link>
         </li>
         <li className="flex">
-          <span className="font-bold">03</span>
-          <span className="ml-3">Technology</span>
+          <Link to="/technology" className="flex" onClick={props.onClick}>
+            <span className="font-bold">03</span>
+            <span className="ml-3">Technology</span>
+          </Link>
         </li>
       </ul>
     </nav>
