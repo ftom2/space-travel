@@ -13,9 +13,13 @@ export default function Home() {
   const navigate = useNavigate();
 
   return (
-    <div className="text-primary text-center mt-12 px-6 flex flex-col items-center pb-12">
-      <h4 className="text-base font-barlow-cond">SO, YOU WANT TO TRAVEL TO</h4>
-      <h1 className="text-80px text-white my-4 leading-100px">SPACE</h1>
+    <div className="text-primary text-center mt-12 px-6 flex flex-col items-center pb-12 md:mt-26">
+      <h4 className="text-base text-xl font-barlow-cond">
+        SO, YOU WANT TO TRAVEL TO
+      </h4>
+      <h1 className="text-80px text-white my-4 leading-100px md:text-9.375rem">
+        SPACE
+      </h1>
 
       <p className="font-barlow leading-6">
         Let’s face it; if you want to go to space, you might as well genuinely
@@ -25,7 +29,7 @@ export default function Home() {
       </p>
 
       <div
-        className="mt-20 rounded-full bg-white h-150px w-150px flex items-center justify-center text-dark text-xl cursor-pointer"
+        className="mt-20 rounded-full bg-white h-150px w-150px flex items-center justify-center text-dark text-2rem cursor-pointer md:h-242px md:w-242px"
         onClick={() => navigate("/destinations")}
       >
         <span>EXPLORE</span>

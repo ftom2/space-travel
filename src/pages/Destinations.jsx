@@ -28,7 +28,7 @@ export default function Destinations() {
         <li
           className={`${
             selectedTab === item.name ? "border-b-2 border-white" : ""
-          } pb-2 cursor-pointer`}
+          } pb-2 cursor-pointer uppercase`}
           onClick={() => setSelectedTab(item.name)}
           key={item.name}
         >
