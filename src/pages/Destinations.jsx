@@ -28,7 +28,7 @@ export default function Destinations() {
         <li
           className={`${
             selectedTab === item.name ? "border-b-2 border-white" : ""
-          } pb-2 cursor-pointer uppercase`}
+          } pb-2 cursor-pointer uppercase md:text-base`}
           onClick={() => setSelectedTab(item.name)}
           key={item.name}
         >
@@ -39,19 +39,19 @@ export default function Destinations() {
   }
 
   return (
-    <div className="text-white flex flex-col items-center mt-6 px-6 pb-15">
+    <div className="text-white flex flex-col items-center mt-6 px-6 pb-15 md:mt-15">
       <PageTitle number="01" text="PICK YOUR DESTINATION" />
       <img
         src={selectedDestination.images.webp}
         alt={selectedTab}
-        className="w-170px h-170px mt-8"
+        className="w-170px h-170px mt-8 w-300px h-300px"
       />
 
-      <ul className="tabs flex mt-6 text-sm gap-x-6 tracking-wider font-barlow-cond">
+      <ul className="tabs flex mt-6 text-sm gap-x-6 tracking-wider font-barlow-cond md:mt-14">
         {renderTabs()}
       </ul>
 
-      <div className="tab-content flex flex-col items-center">
+      <div className="tab-content flex flex-col items-center md:mt-8 md:max-w-573px">
         <Tab
           title={selectedDestination.name}
           description={selectedDestination.description}
