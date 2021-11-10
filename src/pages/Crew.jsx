@@ -37,22 +37,24 @@ export default function Crew() {
   }
 
   return (
-    <div className="text-white flex flex-col items-center mt-6 px-6 pb-15">
+    <div className="text-white flex flex-col items-center mt-6 px-6 pb-15 md:mt-15 md:pb-0">
       <PageTitle number="02" text="meet your crew" />
-      <img
-        src={selectedMember.images.webp}
-        alt={selectedTab}
-        className="w-full h-222px mt-8 border-b border-gray-700 object-contain"
-      />
-
-      <ul className="tabs flex mt-8 gap-x-4">{renderTabs()}</ul>
-
-      <div className="tab-content flex flex-col items-center mt-8 text-white text-center">
-        <Tab
-          name={selectedMember.name}
-          bio={selectedMember.bio}
-          role={selectedMember.role}
+      <div className="flex flex-col items-center md:flex-col-reverse md:max-w-458px">
+        <img
+          src={selectedMember.images.webp}
+          alt={selectedTab}
+          className="w-full h-222px mt-8 border-b border-gray-700 object-contain md:border-none md:mt-10 md:h-auto"
         />
+
+        <ul className="tabs flex mt-8 gap-x-4 md:mt-10">{renderTabs()}</ul>
+
+        <div className="tab-content flex flex-col items-center mt-8 text-white text-center">
+          <Tab
+            name={selectedMember.name}
+            bio={selectedMember.bio}
+            role={selectedMember.role}
+          />
+        </div>
       </div>
     </div>
   );
