@@ -39,7 +39,7 @@ export default function MainNav(props) {
       <ul className="uppercase text-white space-y-8 font-barlow-cond tracking-wider mt-16 md:flex md:mt-0 md:space-y-0 md:space-x-9">
         {links.map((link) => {
           return (
-            <li>
+            <li key={link.number}>
               <NavLink
                 to={link.path}
                 className={({ isActive }) =>
