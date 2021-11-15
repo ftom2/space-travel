@@ -6,3 +6,4 @@ A Frontend mentor challenge
 3. run **pnpm i**
 4. run **pnpm run dev**
 5. open browser at http://localhost:3000
+6. The website is supported in mobile/tablet/desktop
