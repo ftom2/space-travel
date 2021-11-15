@@ -27,10 +27,29 @@ body {
   color: #0b0d17;
 }
 
-.mobile-nav {
+.main-nav {
   backdrop-filter: blur(81.5485px);
 }
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.explore-btn:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: hsl(0deg 0% 100% / 0.1);
+  opacity: 0;
+  transition: opacity 400ms linear, transform 400ms ease-in-out;
+}
+
+.explore-btn:hover:after,
+.explore-btn:focus:after {
+  transform: scale(1.5);
+  opacity: 1;
 }

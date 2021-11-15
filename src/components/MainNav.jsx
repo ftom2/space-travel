@@ -26,9 +26,23 @@ export default function MainNav(props) {
 
   return (
     <nav
-      className={`main-nav fixed right-0 top-0 h-full bg-white bg-opacity-5 w-8/12 text-white mobile-nav p-8 transition transform origin-right z-50 md:h-auto md:w-auto md:py-0 md:absolute ${
-        props.show ? "scale-x-100" : "scale-x-0 md:scale-x-100"
-      }`}
+      className={`main-nav
+        fixed 
+        right-0 
+        top-0 
+        h-full 
+        bg-white 
+        bg-opacity-5 
+        w-8/12 
+        text-white 
+        p-8 transition transform 
+        origin-right 
+        z-50 
+        md:h-auto md:w-auto md:py-0 md:absolute
+        lg:mt-10
+        lg:pr-41
+        lg:pl-31
+        ${props.show ? "scale-x-100" : "scale-x-0 md:scale-x-100"}`}
     >
       <img
         src="images/icon-close.svg"
@@ -49,8 +63,10 @@ export default function MainNav(props) {
                 }
                 onClick={props.onClick}
               >
-                <span className="font-bold md:hidden">{link.number}</span>
-                <span className="ml-3 md:ml-0">{link.text}</span>
+                <span className="font-bold md:hidden lg:block">
+                  {link.number}
+                </span>
+                <span className="ml-3 md:ml-0 lg:ml-3">{link.text}</span>
               </NavLink>
             </li>
           );

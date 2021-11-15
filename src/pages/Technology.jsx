@@ -43,27 +43,32 @@ export default function Technology() {
   }
 
   return (
-    <div className="text-white flex flex-col items-center mt-6 pb-15 md:mt-15">
-      <div className="md:w-full md:px-6">
-        <PageTitle number="03" text="space launch 101" />
-      </div>
+    <div className="text-white flex flex-col items-center mt-6 pb-15 md:mt-15 lg:pl-41 lg:grid lg:grid-cols-3">
+      <PageTitle
+        number="03"
+        text="space launch 101"
+        className="md:w-full md:px-6 lg:col-span-3"
+      />
       <img
         src={
-          isMobile
+          isMobile || isDesktop
             ? selectedTechnology.images.portrait
             : selectedTechnology.images.landscape
         }
         alt={selectedTab}
-        className="w-full h-170px mt-8 border-b border-gray-700 object-cover md:h-310px"
+        className="w-full h-170px mt-8 border-b border-gray-700 object-cover md:h-310px lg:col-start-3 lg:border-none lg:w-515px lg:h-527px lg:justify-self-end"
       />
+      <div className="flex flex-col items-center lg:flex-row lg:row-start-2 lg:col-span-2 lg:mr-12">
+        <ul className="tabs flex mt-8 gap-x-4 px-6 md:mt-14 lg:flex-col lg:gap-y-8">
+          {renderTabs()}
+        </ul>
 
-      <ul className="tabs flex mt-8 gap-x-4 px-6 md:mt-14">{renderTabs()}</ul>
-
-      <div className="tab-content flex flex-col items-center mt-6 px-6 text-white text-center md:mt-11">
-        <Tab
-          name={selectedTechnology.name}
-          description={selectedTechnology.description}
-        />
+        <div className="tab-content flex flex-col items-center mt-6 px-6 text-white text-center md:mt-11 lg:text-left lg:items-start">
+          <Tab
+            name={selectedTechnology.name}
+            description={selectedTechnology.description}
+          />
+        </div>
       </div>
     </div>
   );

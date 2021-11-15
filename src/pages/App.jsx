@@ -6,9 +6,9 @@ import MainNav from "../components/MainNav";
 function App() {
   const [showNav, setShowNav] = useState(false);
   return (
-    <div className="min-h-screen bg-page">
-      <header className="text-white flex justify-between items-center px-6 pt-6">
-        <Link to="/">
+    <div className="min-h-screen bg-page flex flex-col">
+      <header className="text-white flex justify-between items-center px-6 pt-6 lg:px-14">
+        <Link to="/" className="lg:mt-10">
           <img
             src="images/logo.svg"
             alt=""

@@ -1,9 +1,11 @@
 export default function Tab({ title, description, distance, travelTime }) {
   return (
     <>
-      <h1 className="mt-5 text-6xl uppercase md:text-5rem">{title}</h1>
+      <h1 className="mt-5 text-6xl uppercase md:text-5rem lg:text-6.25rem">
+        {title}
+      </h1>
 
-      <p className="text-center font-barlow text-primary md:mt-4 md:text-base">
+      <p className="text-center font-barlow text-primary md:mt-4 md:text-base lg:text-lg">
         {description}
       </p>
 

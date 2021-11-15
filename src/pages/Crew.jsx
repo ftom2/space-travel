@@ -39,18 +39,21 @@ export default function Crew() {
   }
 
   return (
-    <div className="text-white flex flex-col items-center mt-6 px-6 pb-15 md:mt-15 md:pb-0">
-      <PageTitle number="02" text="meet your crew" />
-      <div className="flex flex-col items-center md:flex-col-reverse md:max-w-458px">
-        <img
-          src={selectedMember.images.webp}
-          alt={selectedTab}
-          className="w-full h-222px mt-8 border-b border-gray-700 object-contain md:border-none md:mt-10 md:h-auto"
-        />
+    <div className="text-white grid grid-cols-1 justify-items-center  mt-6 px-6 pb-15 md:mt-15 md:pb-0 lg:pl-41 lg:pr-34 lg:grid-cols-2 lg:justify-items-start">
+      <PageTitle number="02" text="meet your crew" className="lg:hidden" />
+      <img
+        src={selectedMember.images.webp}
+        alt={selectedTab}
+        className="w-full h-222px mt-8 border-b border-gray-700 object-contain md:border-none md:mt-10 md:h-572px md:row-start-5 lg:row-start-1 lg:col-start-2"
+      />
 
-        <ul className="tabs flex mt-8 gap-x-4 md:mt-10">{renderTabs()}</ul>
+      <div className="grid grid-cols-1 justify-items-center lg:justify-items-start">
+        <PageTitle number="02" text="meet your crew" />
+        <ul className="tabs flex mt-8 gap-x-4 md:mt-10 lg:grid-row-3">
+          {renderTabs()}
+        </ul>
 
-        <div className="tab-content flex flex-col items-center mt-8 text-white text-center">
+        <div className="tab-content flex flex-col items-center mt-8 text-white text-center md:max-w-458px lg:items-start lg:text-left lg:max-w-800px">
           <Tab
             name={selectedMember.name}
             bio={selectedMember.bio}
