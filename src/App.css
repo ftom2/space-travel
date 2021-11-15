@@ -53,3 +53,9 @@ body {
   transform: scale(1.5);
   opacity: 1;
 }
+
+@media (min-width: 1024px) {
+  .lg\:row-start-1 {
+    grid-row-start: 1;
+  }
+}

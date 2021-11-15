@@ -48,7 +48,9 @@ export default function Crew() {
       />
 
       <div className="grid grid-cols-1 justify-items-center lg:justify-items-start">
-        <PageTitle number="02" text="meet your crew" />
+        <div className="hidden lg:block">
+          <PageTitle number="02" text="meet your crew" />
+        </div>
         <ul className="tabs flex mt-8 gap-x-4 md:mt-10 lg:grid-row-3">
           {renderTabs()}
         </ul>
