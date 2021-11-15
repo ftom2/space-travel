@@ -54,6 +54,10 @@ body {
   opacity: 1;
 }
 
+/* 
+A HACK TO FIX AN ANNOYING BUG WITH CSS ENGINE THAT IS SUPPOSED TO RENDER THIS CLASS
+BUT FOR SOME REASON IT DOESN'T
+*/
 @media (min-width: 1024px) {
   .lg\:row-start-1 {
     grid-row-start: 1;
