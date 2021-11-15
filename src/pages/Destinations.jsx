@@ -11,12 +11,12 @@ export default function Destinations() {
 
   useEffect(() => {
     let root = document.documentElement;
-    root.style.setProperty(
-      "--bg-page",
-      "url('images/background-destination-mobile.jpg')"
-    );
+    const size = isMobile ? "mobile" : isDesktop ? "desktop" : "tablet";
+    const url = `url('images/background-destination-${size}.jpg')`;
+    root.style.setProperty("--bg-page", url);
   });
 
+  //when selectedTab changes, we pick a new destination accordingly
   useEffect(() => {
     const destination = destinations.find((item) => item.name === selectedTab);
     setSelectedDestination(destination);

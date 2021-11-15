@@ -1,13 +1,16 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
 
 export default function Home() {
+  const isMobile = useMediaQuery({ query: "(max-width: 767.9px)" });
+  const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" });
+
   useEffect(() => {
     let root = document.documentElement;
-    root.style.setProperty(
-      "--bg-page",
-      "url('images/background-home-mobile.jpg')"
-    );
+    const size = isMobile ? "mobile" : isDesktop ? "desktop" : "tablet";
+    const url = `url('images/background-home-${size}.jpg')`;
+    root.style.setProperty("--bg-page", url);
   });
 
   const navigate = useNavigate();

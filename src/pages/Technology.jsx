@@ -14,11 +14,8 @@ export default function Technology() {
 
   useEffect(() => {
     const root = document.documentElement;
-    const url = isMobile
-      ? "url('images/background-technology-mobile.jpg')"
-      : isDesktop
-      ? "url('images/background-technology-desktop.jpg')"
-      : "url('images/background-technology-tablet.jpg')";
+    const size = isMobile ? "mobile" : isDesktop ? "desktop" : "tablet";
+    const url = `url('images/background-technology-${size}.jpg')`;
     root.style.setProperty("--bg-page", url);
   });
 

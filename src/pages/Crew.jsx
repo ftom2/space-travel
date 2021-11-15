@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import { crew } from "../../data.json";
 import PageTitle from "../components/PageTitle";
 import Tab from "../components/MemberTab";
 
 export default function Crew() {
+  const isMobile = useMediaQuery({ query: "(max-width: 767.9px)" });
+  const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" });
   const [selectedTab, setSelectedTab] = useState(crew[0].name);
   const [selectedMember, setSelectedMember] = useState(
     crew.find((item) => item.name === selectedTab)
@@ -11,10 +14,9 @@ export default function Crew() {
 
   useEffect(() => {
     let root = document.documentElement;
-    root.style.setProperty(
-      "--bg-page",
-      "url('images/background-crew-mobile.jpg')"
-    );
+    const size = isMobile ? "mobile" : isDesktop ? "desktop" : "tablet";
+    const url = `url('images/background-crew-${size}.jpg')`;
+    root.style.setProperty("--bg-page", url);
   });
 
   useEffect(() => {
